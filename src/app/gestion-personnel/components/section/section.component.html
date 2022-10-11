@@ -1,0 +1,51 @@
+<!--nav class="navbar bg-light">
+    <div class="container-fluid row col-4">
+      <form class="d-flex" role="search">
+      <input class="form-control me-2"  type="search" placeholder="Chercher" [(ngModel)]="MotCle" name="MotCle" (input)="search()" >
+
+       
+      </form>
+    </div>
+    <div class="col-auto"><button class="btn btn-primary mx-2" (click)="add()">+ Ajouter Section</button></div>
+  </nav-->
+
+  <body class="bg-light p-3">
+<div *ngIf="unite1" class="container border py-4 bg-white">
+  <div class="" >
+  <h2 style="color: #F5B7B1;">liste des {{unite1.designation}}</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>  
+  <nav class="navbar my-3 border" >
+    <div class="container-fluid row col-4">
+      <form class="d-flex" role="search">
+      <input class="form-control me-2"  type="search" placeholder="Chercher"  [(ngModel)]="MotCle" name="MotCle" (input)="search()" >
+
+       
+      </form>
+    </div>
+    <div class="" *ngIf="select.length"><button class="btn btn-danger mx-2" (click)="DeleteAll()">delete all</button></div>
+    <div class="col-auto"><button *ngIf="unite1" class="btn btn-primary mx-2" (click)="add()">+ Ajouter {{unite1.designation}}</button></div>
+  </nav>
+</div>
+<table class="table table-striped"  *ngIf="list">
+  <thead class="sticky-top" style="background-color: #F5B7B1;">
+ <tr>
+    <th></th>
+    <th>Code</th>
+    <th>Designation</th>
+    <th></th>
+    <th></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr *ngFor="let s of list">
+    <td><div class="my-2"><input type="checkbox" class="form-check-input" (click)="check(s.code_u)"></div></td>
+    <td><p  class="my-2">{{s.code_u}}</p></td>
+    <td><p  class="my-2">{{s.designation}}</p></td>
+    <td class="col-2"><button class="btn btn-outline-danger" (click)="delete(s.code_u)">supprimer</button></td>
+    <td class="col-2"><button class="btn btn-outline-primary" (click)="update(s.code_u)">Modifier</button></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+  </body>

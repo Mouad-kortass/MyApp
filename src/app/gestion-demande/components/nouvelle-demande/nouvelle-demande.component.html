@@ -1,0 +1,61 @@
+
+
+
+<div class="container ">
+
+    <div class="card text-center mt-3">
+        <div class="card-header">
+          <h4>nouvelle Demande </h4>
+        </div>
+        <div class="card-body">
+        
+          <form [formGroup]="DemandeForm">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Type de demande :</label>
+              <div class="col-sm-8">
+                <select class="form-select">
+                    <option value="1" >Conge annuel</option>
+                    <option value="2">Conge de maladie</option>
+                    <option value="3">Autorisation de sortie</option>
+                </select>
+              </div>
+              
+            </div>
+            <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Date Debut: :</label>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control" id="inputEmail3" formControlName="date_debut">
+                </div>
+                
+              </div>
+              <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Date Fin :</label>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control"  id="inputEmail3" formControlName="date_fin">
+                </div>
+                
+              </div>
+              <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label" form="Raison">Raison :</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputEmail3" >
+                </div>
+                
+              </div>
+            <div class="row mb-3">
+              <label for="inputPassword3" class="col-sm-2 col-form-label" >Commentaire :</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputPassword3">
+              </div>
+            </div>
+
+           
+            
+            <button type="submit" (click)="NewDemande()" class="btn btn-outline-primary m-3">Enregistrer</button>
+            <button type="submit"  class="btn btn-outline-danger m-3">Annuler</button>
+          </form>
+      </div>
+
+
+
+</div>

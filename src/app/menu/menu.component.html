@@ -1,0 +1,60 @@
+
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="icon" type="image/x-icon" href="favicon.ico">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<header>
+    <header class="p-3  border-bottom">
+
+
+
+      <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
+      
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li class="dropdown"><a class="nav-link px-2 link-dark dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Société </a>
+                <ul class="dropdown-menu bg-light.bg-gradient">
+  
+                  <li><a class="dropdown-item" href="#">Info</a></li>
+                  <li class="dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Unite d'affectation </a>
+                            <ul class="dropdown-menu" style="right: auto;left: 100%">
+                            <li *ngIf="unite1"><a class="dropdown-item" routerLink="/collaborateur/UNAF_1/2" *ngIf="unite1.etat">{{unite1.designation}}</a></li>
+                            <li *ngIf="unite2"><a class="dropdown-item" routerLink="/collaborateur/UNAF_2/2" *ngIf="unite2.etat">{{unite2.designation}}</a></li>
+                            <li *ngIf="unite3"><a class="dropdown-item" routerLink="/collaborateur/UNAF_3/3" *ngIf="unite3.etat">{{unite3.designation}}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item fs-6" routerLink="/collaborateur/gestion_unites">Gestion des Unites</a></li>
+
+                            </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a routerLink="/collaborateur/personnel" class="nav-link px-2 link-dark">personnel</a></li>
+              <li><a routerLink="/collaborateur/liste_demande" href="#" class="nav-link px-2 link-dark">Demande</a></li>
+              <li><a routerLink="/collaborateur/demande" href="#" class="nav-link px-2 link-dark">nouvelle demande</a></li>
+            </ul>
+      
+            <a   class="nav-link px-2 link-dark">{{UserName}}</a>
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" >
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+</header>
+<body>
+<router-outlet></router-outlet>
+</body>
+

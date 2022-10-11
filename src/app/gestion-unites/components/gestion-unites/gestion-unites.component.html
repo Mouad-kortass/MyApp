@@ -1,0 +1,56 @@
+
+  <body class="bg-light p-3">
+    <div class="container border py-4 bg-white">
+      <div class="" >
+      <h2 style="color: #F5B7B1;">Gestion des Unites</h2>
+      <p>The .table-striped class adds zebra-stripes to a table:</p>  
+ 
+    </div>
+    <div class="col-8 offset-2 py-5">
+    <table class="table table border">
+      <thead class="sticky-top" style="background-color: #F5B7B1;">
+     <tr>
+        <th>Code</th>
+        <th>Designation</th>
+        <th>Etat</th>
+        <th></th>
+     </tr>
+     </thead>
+     <tbody>
+        <tr *ngIf="unite1">
+            <td><p class="m-2">1</p></td>
+            <td><input type="text" class="form-control" ngModel [(ngModel)]="unite1.designation" [disabled]="disabledForm1"></td>
+            <td><input type="checkbox" disabled checked class="form-check-input m-2"></td>
+            <td class="col-3">
+            <button *ngIf="update!=1" (click)="Update(1)" class="btn btn-outline-primary"><i class="bi bi-pencil-square fs-6 m-2"> Modifier</i></button>
+            <button *ngIf="update==1" (click)="onUpdate(1,unite1.designation,true)" class="btn btn-outline-success mx-2"><i class="bi bi-check2-square fs-6 m-2"></i></button>
+            <button *ngIf="update==1" (click)="annuler()" class="btn btn-outline-danger "><i class="bi bi-x-lg fs-6 m-2"></i></button>
+            </td>
+          </tr>
+        <tr  *ngIf="unite2" [ngClass]="unite2.etat?'':'bg-light'">
+        <td><p class="m-2">2</p></td>
+        <td><input type="text" class="form-control" ngModel [(ngModel)]="unite2.designation" [disabled]="disabledForm2"></td>
+        <td><input type="checkbox" [(ngModel)]="unite2.etat" class="form-check-input m-2" [disabled]="disabledForm2"></td>
+        <td class="col-3">
+        <button *ngIf="update!=2" (click)="Update(2)" class="btn btn-outline-primary"><i class="bi bi-pencil-square fs-6 m-2"> Modifier</i></button>
+        <button *ngIf="update==2" (click)="onUpdate(2,unite2.designation,unite2.etat)" class="btn btn-outline-success mx-2"><i class="bi bi-check2-square fs-6 m-2"></i></button>
+        <button *ngIf="update==2" (click)="annuler()" class="btn btn-outline-danger "><i class="bi bi-x-lg fs-6 m-2"></i></button>
+        </td>
+        <tr  *ngIf="unite3" [ngClass]="unite3.etat?'':'bg-light'">
+            <td><p class="m-2">3</p></td>
+            <td><input type="text" class="form-control" ngModel [(ngModel)]="unite3.designation" [disabled]="disabledForm3"></td>
+            <td><input type="checkbox" [(ngModel)]="unite3.etat" class="form-check-input m-2" [disabled]="disabledForm3"></td>
+            <td class="col-3">
+            <button *ngIf="update!=3" (click)="Update(3)" class="btn btn-outline-primary"><i class="bi bi-pencil-square fs-6 m-2"> Modifier</i></button>
+            <button *ngIf="update==3" (click)="onUpdate(3,unite3.designation,unite3.etat)" class="btn btn-outline-success mx-2"><i class="bi bi-check2-square fs-6 m-2"></i></button>
+            <button *ngIf="update==3" (click)="annuler()" class="btn btn-outline-danger "><i class="bi bi-x-lg fs-6 m-2"></i></button>
+            </td>
+        <tr>
+    
+    </tbody>
+    </table>
+</div>
+    </div>
+
+
+      </body>

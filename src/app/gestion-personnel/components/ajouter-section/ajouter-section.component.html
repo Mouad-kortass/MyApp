@@ -1,0 +1,33 @@
+
+
+<div class="container">
+
+
+    <div class="card mt-5 text-center">
+        <div class="card-header"><h4 *ngIf="uniteselected">Ajouter {{uniteselected.designation}}</h4></div>
+        <div class="card-body">
+            <div class="h5"></div>
+<form [formGroup]="formSection">
+            <div class="row m-3">
+                <label for="code" class="col-sm-2 col-form-label" >Commentaire :</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="code" formControlName="code">
+                </div>
+              </div>
+            <div class="row m-3">
+                <label for="des" class="col-sm-2 col-form-label" >Commentaire :</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="des" formControlName="designation">
+                </div>
+              </div>
+
+              <div class="m-5 f-flex">
+              <button class="btn btn-outline-primary m-2" (click)="onaddSection()">Ajouter</button>
+              <button class="btn btn-outline-danger m-2" (click)="Annuler()">Annuler</button>
+            </div>
+          </form>
+          <p *ngIf="message" class="text-danger">{{message}}</p>
+        </div>
+    </div>
+
+</div>

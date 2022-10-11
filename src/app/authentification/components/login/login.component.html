@@ -1,0 +1,33 @@
+
+<div class="container">
+<div class="card col-xl-4 col-lg-6 col-sm-12 offset-xl-4 offset-lg-3 offset-sm-0 mt-5">
+
+    <div class="card-body">
+     <div class="my-5">
+        <h3 class="d-flex justify-content-center m-2">Bienvenue</h3>
+        <h6 class="d-flex justify-content-center text-primary m-2">Accéder à votre espace GTP</h6>
+    </div>
+   
+        <form [formGroup]="LoginForm">
+            
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput1" placeholder="name@example.com" formControlName="login">
+                <label for="floatingInput1">Identifiant</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="password">
+                <label for="floatingInput ">Mot de passe</label>
+              </div>
+        <div class="mb-3 text-danger" *ngIf="message">
+            {{message}}
+        </div>
+  <div class="row row align-items-end my-5">
+    <div class="col-6"><button class="btn btn-outline-primary" (click)="login()">Se connecter</button></div>
+    <div class="col-6"><a class="form-check-label"><h6 class="text-primary">mot de passe oubliée ?</h6></a></div>
+        
+    </div>
+    </form>
+    </div>
+</div>
+
+</div>
